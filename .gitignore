@@ -33,3 +33,9 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# Eclipse stuff  #
+##################
+.classpath
+.settings
+.project
+target

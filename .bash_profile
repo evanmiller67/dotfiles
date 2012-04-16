@@ -16,9 +16,12 @@ alias subl='open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ T
 
 # History syncing
 export HISTSIZE=1000
-export HISTCONTROL=erasedups,ignoreboth
+export HISTCONTROL=erasedups
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
+
+# Use vi because fuck emacs
+export EDITOR=vi
 
 # Whitenoise generation
 alias brownnoise='play -qn -t sl -r48000 -c2 - synth -1 brownnoise tremolo .1 20 <  /dev/zero &'

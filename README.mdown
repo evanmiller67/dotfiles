@@ -1,0 +1,5 @@
+## Dot files
+These are some small dot files that I like to keep around when moving from machine to machine. This isn't comprehensive, but it makes getting up and running fairly simple.
+
+### License
+There is no license. I don't care what you do. This is all stuff you can find on your own anyway -- I just made it easy for you (if you use it.)

@@ -28,10 +28,17 @@
 
 # OS generated files #
 ######################
-.DS_Store?
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
+.Trash
+.CFUserTextEncoding
+.bash_history
+.cups
+.lesshst
+.pry_history
+.rnd
 
 # Eclipse stuff  #
 ##################
@@ -39,3 +46,19 @@ Thumbs.db
 .settings
 .project
 target
+
+# SSH #
+#######
+.ssh/id*
+.ssh/known_hosts
+
+# SVN #
+#######
+.subversion
+
+# Rails #
+#########
+.gem
+.irb-history
+.mysql_history
+.rvm

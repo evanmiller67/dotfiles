@@ -63,3 +63,17 @@ target
 .irb-history
 .mysql_history
 .rvm
+
+# Folders #
+###########
+src/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+class/
+

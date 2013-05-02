@@ -39,6 +39,7 @@ Thumbs.db
 .lesshst
 .pry_history
 .rnd
+.viminfo
 
 # Eclipse stuff  #
 ##################

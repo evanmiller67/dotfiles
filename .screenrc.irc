@@ -1,2 +1,13 @@
-startup_message off
-screen -t irc 1 irssi
+# Use by:
+#   screen -c .screenrc.irc
+#
+# Name the session at the same time:
+#   screen -c .screenrc.irc -S chat
+
+hardstatus alwayslastline   # Always show status
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{    B}%Y-%m-%d %{W}%c %{g}]'
+
+# Default windows
+screen -t irc 0
+screen -t open  1
+screen -t code 2

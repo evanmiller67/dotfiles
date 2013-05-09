@@ -1,5 +1,8 @@
-hardstatus alwayslastline
+hardstatus alwayslastline   # Always show status
+# Status line like expanded full width of window:
+#[ <machine_name> ][ <open_windows> ][ <time_date> ]
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 
+# Default windows
 screen -t irc	0
 screen -t open	1

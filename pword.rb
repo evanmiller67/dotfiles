@@ -8,4 +8,4 @@ end
 
 puts "passwd? "
 pass = STDIN.gets
-puts "#{pass} '#{Digest::MD5.hexdigest(pass)}'"
+puts "'#{Digest::MD5.hexdigest(pass)}'"

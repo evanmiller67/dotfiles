@@ -1,0 +1,18 @@
+<html>
+<head>
+  <script src="https://rawgithub.com/evanmiller67/dotfiles/master/md5.js"></script>
+  <script type="text/javascript">
+    function hash() {
+      var hashed_value = md5(document.getElementById('hashme').value + "\n");
+      document.getElementById('hashed').innerHTML = hashed_value;
+    }
+  </script>
+</head>
+<body>
+  <label for="hashme">Text to hash</label>
+  <input type="text" id="hashme" />
+  <input type="button" onclick="hash()" value="Hash it"/>
+  <br />
+  <p id="hashed"></p>
+</body>
+</html>

@@ -64,9 +64,15 @@ target
 .irb-history
 .mysql_history
 .rvm
+.pow
+
+# Local overrides #
+###################
+*.local
 
 # Folders #
 ###########
+.config/
 src/
 Desktop/
 Documents/

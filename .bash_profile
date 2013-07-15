@@ -1,5 +1,8 @@
+source "$HOME/.bash_functions"
+
 # Prompt with current path
-PS1='[\u@\h \w]\\$ '
+#PS1='[\u@\h \w]\\$ '
+[ -z "$PS1" ] || export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)$ "
 
 # TODO: ensure .rvm exists
 # RVM
@@ -36,3 +39,10 @@ alias grep='grep --color=auto'
 
 # TODO: make sure exists
 export CC=/usr/bin/gcc-4.2
+
+
+git_completion='/usr/local/Cellar/git/1.8*/etc/bash_completion.d/git-completion.bash'
+
+if [ -f $git_completion ]; then
+  source $git_completion
+fi

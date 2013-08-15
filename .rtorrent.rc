@@ -1,0 +1,8 @@
+# Global download rate (kb; 0 for unlimited)
+download_rate = 500
+
+# Default directory to save the downloaded torrents
+directory=/Users/emiller/torrents
+
+# Ecryption
+encryption = require

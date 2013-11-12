@@ -23,9 +23,9 @@ alias subl='open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ T
 
 # History syncing
 export HISTSIZE=1000
-export HISTCONTROL=erasedups
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
+export HISTCONTROL=erasedups
 
 # There was any other choice? 
 export EDITOR=vi

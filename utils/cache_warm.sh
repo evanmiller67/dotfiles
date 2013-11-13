@@ -31,7 +31,7 @@ else
 fi
 
 # set authenticity_token for credentials
-authToken=`curl -s --cookie-jar session "http://$domain" | grep csrf-token | awk '{print $2;}' | awk -F"\"" '{print $2;}'`
+authToken=`curl -s --cookie-jar session "$domain" | grep csrf-token | awk '{print $2;}' | awk -F"\"" '{print $2;}'`
 if [ -z "$authToken" ] && [ -z "${authToken+xxx}" = "xxx" ]
   then
   echo "Did not receive authenticity_token." 1>&2
@@ -40,7 +40,7 @@ fi
 echo "authToken set to: $authToken"
 
 # login
-curl -s -X POST --data-urlencode "client_user_session[email]=$email" --data-urlencode "client_user_session[password]=$pass" --data-urlencode "authenticity_token=$authToken" --cookie session --cookie-jar auth "http://$domain/user_session" > /dev/null
+curl -s -X POST --data-urlencode "client_user_session[email]=$email" --data-urlencode "client_user_session[password]=$pass" --data-urlencode "authenticity_token=$authToken" --cookie session --cookie-jar auth "$domain/user_session" > /dev/null
 if [ ! -f auth ]
   then
   echo "Unable to log in."
@@ -51,7 +51,7 @@ echo "logged in"
 # include --cookie auth on all requests for this session
 
 # get all employer links
-curl -s --cookie auth "http://$domain/employers" | awk '/employers\/[0-9]+/' | awk -F"\"" '{print $2;}' > emps
+curl -s --cookie auth "$domain/employers" | awk '/employers\/[0-9]+/' | awk -F"\"" '{print $2;}' > emps
 if [ ! -f emps ]
   then
   echo "Unable to retrieve list of employers." 1>&2
@@ -62,7 +62,7 @@ echo "Employer listing successful."
 # call http://clientapp.changehealthcare.com/employers/123 for each
 for emp in $(cat emps)
 do
-  curl -s --cookie auth "http://$domain$emp" > /dev/null
+  curl -s --cookie auth "$domain$emp" > /dev/null
   echo "Cached employer: $emp"
 done
 

@@ -12,6 +12,10 @@ set shiftwidth=2  " Set column shift amount
 let g:zenburn_high_Contrast = 1
 let g:zenburn_alternate_Visual = 1
 let g:zenburn_old_Visual = 1
-colorscheme zenburn
+"colorscheme zenburn
+colorscheme jellybeans
+" candyman
+" solarized
 
-hi Search term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+"hi Search term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+iabbrev rpry require 'pry'; binding.pry

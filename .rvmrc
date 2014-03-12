@@ -1,4 +1,6 @@
 # create the gemset if it does not exist
-rvm_gemset_create_on_use_flag=1
+export rvm_trust_rvmrcs_flag=1
+export rvm_pretty_print_flag=1
+export rvm_gemset_create_on_use_flag=1
 
 export rvm_path="$HOME/.rvm"

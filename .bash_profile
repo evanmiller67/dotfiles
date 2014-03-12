@@ -6,6 +6,10 @@ source "$HOME/.bash_functions"
 #PS1='[\u@\h \w]\\$ '
 [ -z "$PS1" ] || export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)$ "
 
+# TODO: ensure path exists
+PATH=/usr/local/bin:$PATH
+export PATH
+
 # TODO: ensure .rvm exists
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -13,10 +17,6 @@ source "$HOME/.bash_functions"
 # Colors for iTerm. comment/uncomment for system
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
-# TODO: ensure path exists
-PATH=/usr/local/bin:$PATH
-export PATH
 
 # TODO: make platform-based
 alias subl='open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'

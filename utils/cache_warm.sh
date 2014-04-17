@@ -30,28 +30,6 @@ else
   pass="$PASSWORD"
 fi
 
-#APP_ROOT='/var/www/prod/client.changehealthcare.com'
-#APP_USER='www'
-#CACHE_LOG="${APP_ROOT}/log/cache.log"
-#
-## Tee std output to a file (ree will also display stdout)
-#exec > >(tee -a ${CACHE_LOG})
-#exec 2>&1
-#
-## datestamp the logfile
-#echo `date`
-#
-## verify correct user
-#if [[ `whoami` != "${APP_USER}" ]]; then
-#  echo "This script must be run as the ${APP_USER} user."
-#  exit 1
-#fi
-#
-## change to app dir
-#cd $APP_ROOT || exit 1
-#
-#RAILS_ENV=production rails runner "ba = ClientUser.find_by_email('${email}').benefits_administrator;cached={};cached[:employers]=ba.employers_filtered_by_tpa_id(nil);emp_ids=cached[:employers].collect{|e| e.id};key=CacheHelper.gen_key(:base => 'employer_stats', :employers => emp_ids, :tpa_id => nil);cached[:employer_stats]=CacheHelper.fetch_or_store(key){ba.all_employer_stats(nil)};"
-
 # set authenticity_token for credentials
 authToken=`curl -s --cookie-jar session "$domain" | grep csrf-token | awk '{print $2;}' | awk -F"\"" '{print $2;}'`
 if [ -z "$authToken" ] && [ "${authToken+'xxx'}" == "xxx" ]

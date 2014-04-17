@@ -1,5 +1,8 @@
 source "$HOME/.bash_functions"
+source "$HOME/.bash_aliases"
 
+
+# Could be changed to use .bashrc 
 [ ! -f "$HOME/.bash_profile.local" ] || . "$HOME/.bash_profile.local"
 
 # Prompt with current path
@@ -8,6 +11,8 @@ source "$HOME/.bash_functions"
 
 # TODO: ensure path exists
 PATH=/usr/local/bin:$PATH
+PATH=$PATH:$HOME/bin             # Add my bin to the PATH
+PATH=$PATH:$HOME/.rvm/bin        # Add RVM to PATH for scripting
 export PATH
 
 # TODO: ensure .rvm exists
@@ -21,14 +26,20 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # TODO: make platform-based
 alias subl='open -a /Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
 
-# History syncing
-export HISTSIZE=1000
-shopt -s histappend
-export PROMPT_COMMAND="history -a; history -n"
+# Store 10,000 history entries
+export HISTSIZE=10000
+# Don't store duplicates
 export HISTCONTROL=erasedups
+# Append to history file
+shopt -s histappend
 
-# There was any other choice? 
-export EDITOR=vi
+VISUAL=vim
+EDITOR="$VISUAL"
+LESS="FRX"
+RI="--format ansi -T"
+
+export VISUAL EDITOR LESS RI
+
 
 # TODO: ensure present
 # Whitenoise generation

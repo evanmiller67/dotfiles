@@ -1,0 +1,1 @@
+/Users/emiller/.vim/bundle/vim-colorschemes/colors/solarized.vim

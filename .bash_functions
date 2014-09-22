@@ -70,3 +70,7 @@ function rubygc {
   export RUBY_GC_MALLOC_LIMIT=
   export RUBY_FREE_MIN=
 }
+
+function ag_skipping_tests {
+  ag "$@" app/ config/ lib/
+}

@@ -56,3 +56,5 @@ end
   next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(file)
 end
+
+# @todo Have this recursively traverse directories, linking to files in those directories

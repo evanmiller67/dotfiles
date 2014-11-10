@@ -18,6 +18,7 @@ set background=dark " Set background to be dark
 filetype plugin indent on
 
 command! -bar -range=% Trim :<line1>,<line2>s/\s\+$//e
+command! EchoFile echo expand('%:p')
 
 let NERDTreeHijackNetrw=0
 let g:zenburn_high_Contrast = 1

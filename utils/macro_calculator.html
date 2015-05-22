@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Macro Calculator</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Macro</th>
+    <th>Amount (grams)</th>
+    <th>Percentage</th>
+  </tr>
+<tr>
+<td>
+<label for="fat">Fat (g):</label>
+</td>
+<td>
+<input id="fat"      value="" type="number">
+</td><td>
+<p id="fat-percent"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label for="carbs">Carbs (g):</label>
+</td>
+<td>
+<input id="carbs"    value="" type="number">
+</td><td>
+<p id="carbs-percent"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label for="protein">Protein (g):</label>
+</td>
+<td>
+<input id="protein"  value="" type="number">
+</td><td>
+<p id="protein-percent"></p>
+</td>
+</tr>
+<tr>
+<td>
+<label for="calories">Calories:</label>
+</td>
+<td>
+<input id="calories" value="" type="text">
+</td>
+</tr>
+</table>
+<input type="button" id="calc" onclick="calculate()" value="Calc!">
+<script>
+	function calculate() {
+		fat = document.getElementById("fat").valueAsNumber;
+		carbs = document.getElementById("carbs").valueAsNumber;
+		protein = document.getElementById("protein").valueAsNumber;
+		total_cals = fat * 9 + carbs * 4 + protein * 4;
+		fat_percent = Math.round( ((fat * 9) / total_cals) * 10000 ) / 100;
+		carbs_percent = Math.round( ((carbs * 4) / total_cals) * 10000 ) / 100;
+		protein_percent = Math.round( ((protein * 4) / total_cals) * 10000 ) / 100;
+		document.getElementById("fat-percent").innerHTML = fat_percent + "%";
+		document.getElementById("carbs-percent").innerHTML = carbs_percent + "%";
+		document.getElementById("protein-percent").innerHTML = protein_percent + "%";
+		document.getElementById("calories").value = total_cals;
+	}
+</script>
+</body>
+</html>

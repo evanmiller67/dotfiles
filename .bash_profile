@@ -51,11 +51,17 @@ alias noises='play --no-show-progress -c 2 --null synth brownnoise band -n 2 300
 alias grep='grep --color=auto'
 
 # TODO: make sure exists
-export CC=/usr/bin/gcc-4.2
+export CC=/usr/local/bin/gcc-4.2
 
 
-git_completion='/usr/local/Cellar/git/1.8*/etc/bash_completion.d/git-completion.bash'
+#git_completion='/usr/local/Cellar/git/1.8*/etc/bash_completion.d/git-completion.bash'
 
-if [ -f $git_completion ]; then
-  source $git_completion
+#if [ -f $git_completion ]; then
+  #source $git_completion
+#fi
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
+
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh

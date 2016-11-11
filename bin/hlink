@@ -52,9 +52,13 @@ if ARGV.include?('-h')
   exit 0
 end
 
-(Dir.entries(root) - %w(bin . .. .git)).each do |file|
+(Dir.entries(root) - %w(bin . .. .git .ssh)).each do |file|
   next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(file)
 end
 
+(Dir.entries("#{root}/.ssh") - %w(. .. .ssh)).each do |file|
+  next if file =~ /(~|.*\.swp)$/
+  uninstall? ? uninstall(file) : install(".ssh/#{file}")
+end
 # @todo Have this recursively traverse directories, linking to files in those directories

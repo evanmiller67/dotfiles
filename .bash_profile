@@ -54,11 +54,8 @@ alias grep='grep --color=auto'
 export CC=/usr/local/bin/gcc-4.2
 
 
-#git_completion='/usr/local/Cellar/git/1.8*/etc/bash_completion.d/git-completion.bash'
-
-#if [ -f $git_completion ]; then
-  #source $git_completion
-#fi
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion.d ]; then
+    . `brew --prefix`/etc/bash_completion.d
 fi
+
+source ~/.git-completion.bash

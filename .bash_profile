@@ -54,7 +54,7 @@ alias grep='grep --color=auto'
 export CC=/usr/local/bin/gcc-4.2
 
 
-if [ -f `brew --prefix`/etc/bash_completion.d ]; then
+if type -p "brew" &> /dev/null && [ -f `brew --prefix`/etc/bash_completion.d ]; then
     . `brew --prefix`/etc/bash_completion.d
 fi
 

@@ -59,3 +59,9 @@ if type -p "brew" &> /dev/null && [ -f `brew --prefix`/etc/bash_completion.d ]; 
 fi
 
 source ~/.git-completion.bash
+
+if type -p "tmux" &> /dev/null; then
+  printf "\n -----\ntmux sessions \n -----\n"
+  tmux ls
+  printf " -----\n"
+fi

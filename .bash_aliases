@@ -1,7 +1,9 @@
 # ~/.bash_aliases
 
+# OSX aliases
 if [ `uname -s` == "Darwin" ] || [ `uname -s` == "FreeBSD" ]; then
   alias ls='ls -FG'
+  alias lockscreen='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 else
   alias ls='ls -F --color=auto'
 fi

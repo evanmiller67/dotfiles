@@ -5,4 +5,4 @@ File.open('restaurants.txt').each { |l|
   restaurants.push l
 }
 
-10.times { puts restaurants.sample }
+restaurants.shuffle.first(10).each { |r| puts r }

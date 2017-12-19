@@ -21,7 +21,7 @@
   <p id="mealtime"></p>
   <script type="text/javascript">
   (function() {
-    var restaurants = "https://rawgithub.com/evanmiller67/dotfiles/master/utils/restaurants.txt";
+    var restaurants = "restaurants.txt";
     $.get( restaurants, function (data){
       dinner = data.split("\n");
       suffle(dinner);

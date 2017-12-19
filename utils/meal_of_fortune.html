@@ -14,8 +14,7 @@
 
     var restaurants = "restaurants.txt";
     var dinner = [];
-    var colors = ["#D1F2EB","#F9E79F","#D98880","#D2B4DE","#A3E4D7","#AED6F1","#F5CBA7","#FA5882","#8181F7","#9FF781","#FF8000","#FE2E9A"];
-    var bgcolors = ["mediumblue","maroon","#1F618D","#935116","#4A235A","#1D8348","#BA4A00","#000099","#FF6600","#4A235A","#006600","#616A6B"];
+    var bgcolors = ["#951C14","#D81159","#218380","#73D2DE","#FF5714","#C3DD00","#F48668","#73A580","#F24236","#2E86AB","#539987","#FF5666"];
     var blinkSet = false;
 
     function loadXMLDoc() {
@@ -27,12 +26,14 @@
                       dinner = this.responseText.split("\n");
                     }
             };
+        document.getElementById("spinner").disabled=false
     }
 
     function spinTheWheel() {
       shuffle(dinner);
       document.getElementById("mealtime").innerHTML = dinner[0];
       document.getElementById("party").style.visibility="";
+      document.getElementById("parrots").style.visibility="visible";
       if (!blinkSet) {
         setInterval(doBlink,150);
         blinkSet = true;
@@ -40,22 +41,51 @@
     }
 
 doBlink = function () {
-    // Blink, Blink, Blink...
     var blink = document.getElementById("mealtime");
-    blink.style.color=colors[Math.floor(Math.random() * (colors.length + 1))];
     document.body.style.backgroundColor=bgcolors[Math.floor(Math.random() * (bgcolors.length + 1))];
     blink.style.visibility = blink.style.visibility == "" ? "hidden" : "";
 }
 
 window.onload = loadXMLDoc;
   </script>
+    <style>
+      #centered {
+        margin: 0 auto;
+        width: 800px; 
+        text-align: center;
+      }
+      #parrots {
+        visibility: hidden;
+      }
+      h1 {
+        font-size: 48pt;
+        color: #fff;
+      }
+      h2 {
+        color: #fff;
+      }
+      img.parrot {
+        padding: 0px;
+        margin: 0px;
+        float: left;
+      }
+    </style>
 </head>
 <body bgcolor="black">
-  <input type="button" onclick="spinTheWheel()" value="MEAL OF FORTUNE"/><br />
-  <h1 id="mealtime"></h1>
-  <img id="party" src="https://i.imgur.com/N6u0o2U.gif" style="visibility:hidden"/>
-  <script>
-    
-  </script>
+  <div id="centered">
+    <h2>Decide your fate:</h2>
+    <input id="spinner" type="button" onclick="spinTheWheel()" value="MEAL OF FORTUNE" disabled=true/><br />
+    <h1 id="mealtime"></h1>
+    <img id="party" src="https://i.imgur.com/N6u0o2U.gif" style="visibility:hidden"/>
+    <div id="parrots">
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+      <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
+    </div>
+  </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <html>
 <head>
-  <script src="https://rawgithub.com/evanmiller67/dotfiles/master/utils/md5.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     function shuffle(a) {
@@ -12,20 +11,51 @@
             a[j] = x;
         }
     }
+
+    var restaurants = "restaurants.txt";
+    var dinner = [];
+    var colors = ["#D1F2EB","#F9E79F","#D98880","#D2B4DE","#A3E4D7","#AED6F1","#F5CBA7","#FA5882","#8181F7","#9FF781","#FF8000","#FE2E9A"];
+    var bgcolors = ["mediumblue","maroon","#1F618D","#935116","#4A235A","#1D8348","#BA4A00","#000099","#FF6600","#4A235A","#006600","#616A6B"];
+    var blinkSet = false;
+
+    function loadXMLDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", restaurants, true);
+        xhttp.send();
+        xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                      dinner = this.responseText.split("\n");
+                    }
+            };
+    }
+
+    function spinTheWheel() {
+      shuffle(dinner);
+      document.getElementById("mealtime").innerHTML = dinner[0];
+      document.getElementById("party").style.visibility="";
+      if (!blinkSet) {
+        setInterval(doBlink,150);
+        blinkSet = true;
+      }
+    }
+
+doBlink = function () {
+    // Blink, Blink, Blink...
+    var blink = document.getElementById("mealtime");
+    blink.style.color=colors[Math.floor(Math.random() * (colors.length + 1))];
+    document.body.style.backgroundColor=bgcolors[Math.floor(Math.random() * (bgcolors.length + 1))];
+    blink.style.visibility = blink.style.visibility == "" ? "hidden" : "";
+}
+
+window.onload = loadXMLDoc;
   </script>
 </head>
-<body>
-  <input type="button" onclick="hash()" value="MEAL OF FORTUNE"/><br />
+<body bgcolor="black">
+  <input type="button" onclick="spinTheWheel()" value="MEAL OF FORTUNE"/><br />
   <h1 id="mealtime"></h1>
-  <script type="text/javascript">
-  (function() {
-    var restaurants = "restaurants.txt";
-    $.get( restaurants, function (data){
-      dinner = data.split("\n");
-      suffle(dinner);
-      $("#mealtime").text(dinner[0]);
-    });
-  })();
+  <img id="party" src="https://i.imgur.com/N6u0o2U.gif" style="visibility:hidden"/>
+  <script>
+    
   </script>
 </body>
 </html>

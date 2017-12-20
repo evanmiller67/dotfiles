@@ -56,8 +56,13 @@ var insult = adj[0] + " " + adv[0] + " " + nou[0];
 		
 </body>
 <script type="text/javascript">
-  var width = $(window).width() - 50;
-  var height = $(window).height() - 200;
+  var width = $(window).width();
+  var height = $(window).height();
+  var hWidth = Math.floor(width/2);
+  var hHeight = Math.floor(height/2);
+
+  width = hWidth + Math.floor(Math.random() * (hWidth + 1));
+  height = hHeight + Math.floor(Math.random() * (hHeight + 1));
 
   $('body').append('<div id="centered"><img src="https://placeimg.com/'+width+'/'+height+'/any/grayscale"></div>');
 	$('body').append('<div id="insult"><h1>'+insult+'</h1></div>');

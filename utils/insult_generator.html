@@ -51,9 +51,13 @@ var insult = adj[0] + " " + adv[0] + " " + nou[0];
     </style>
 </head>
 <body class="centered">
-		<img src="https://placeimg.com/800/600/any/grayscale">
+		
 </body>
 <script type="text/javascript">
+  var width = $(window).width() - 50;
+  var height = $(window).height() - 200;
+
+	$('body').append('<img src="https://placeimg.com/'+width+'/'+height+'/any/grayscale">');
 	$('body').append('<div id="insult"><h1>'+insult+'</h1></div>');
 </script>
 </html>

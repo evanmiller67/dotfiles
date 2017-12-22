@@ -1,7 +1,6 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, minimum-scale=0.1">
-  <meta http-equiv="refresh" content="5" >
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     function shuffle(a) {
@@ -49,7 +48,22 @@ var insult = adj[0] + " " + adv[0] + " " + nou[0];
 				position: absolute;
 				top: 80%;
 				left: 20%;
-				transform: translate(-20%, -80%);
+				transform: translate( -20%, -80%);
+			}
+			.blink {
+					animation-duration: 2s;
+					animation-name: blink;
+					animation-iteration-count: 1;
+					animation-direction: alternate;
+					animation-timing-function: ease-in-out;
+			}
+			@keyframes blink {
+				from {
+						opacity: 0;
+				}
+				to {
+						opacity: 1;                    
+				}
 			}
     </style>
 </head>
@@ -66,7 +80,7 @@ var insult = adj[0] + " " + adv[0] + " " + nou[0];
   height = hHeight + Math.floor(Math.random() * (hHeight + 1));
 
   $('body').append('<div id="centered"><img src="https://placeimg.com/'+width+'/'+height+'/any/grayscale"></div>');
-	$('body').append('<div id="insult"><h1>'+insult+'</h1></div>');
+  $('body').append('<div id="insult" class="blink"><marquee behavior="slide" scrollamount=20><h1>'+insult+'</h1></marquee></div>');
 </script>
 </html>
 

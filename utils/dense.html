@@ -1,0 +1,31 @@
+<html>
+<script>
+window.onload = function() {
+    var currentColor = 'dodgerblue';
+    var colors = ['powderblue', 'dodgerblue', 'hotpink', 'deeppink', 'gold', 'indianred', 'lightgreen', 'mediumpurple', 'olivedrab', 'orange', 'orangered', 'orchid', 'springgreen', 'steelblue'];
+    setInterval(function() {
+        document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }, 250);
+
+    var blinks = document.getElementsByTagName('blink');
+    var visibility = 'hidden';
+    window.setInterval(function() {
+      for (var i = blinks.length - 1; i >= 0; i--) {
+        blinks[i].style.visibility = visibility;
+      }
+      visibility = (visibility === 'visible') ? 'hidden' : 'visible';
+    }, 100);
+};
+</script>
+<style>
+  body {background-color: powderblue;}
+  h1 {color: white; font-size: 20em; margin-bottom: 20px;}
+  .dmf {width: 750px; margin: 0 auto;}
+</style>
+<body>
+<h1><blink><marquee scrollamount="70">Stahp doin' dumb shit</marquee></blink></h1>
+<div class="dmf">
+  <blink><img src="https://i.imgur.com/i2wHmpm.jpg" /></blink>
+</div>
+</body>
+</html>

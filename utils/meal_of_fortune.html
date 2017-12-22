@@ -1,5 +1,7 @@
 <html>
 <head>
+  <title>MEAL OF DESTINY</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Rubik:900" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     function shuffle(a) {
@@ -14,7 +16,7 @@
 
     var restaurants = "restaurants.txt";
     var dinner = [];
-    var bgcolors = ["#951C14","#D81159","#218380","#73D2DE","#FF5714","#C3DD00","#F48668","#73A580","#F24236","#2E86AB","#539987","#FF5666"];
+    var bgcolors = ["#951C14","#D81159","#218380","#73D2DE","#FF5714","#C3DD00","#F48668","#73A580","#F24236","#2E86AB","#539987","#FF5666", 'powderblue', 'dodgerblue', 'hotpink', 'deeppink', 'gold', 'indianred', 'lightgreen', 'mediumpurple', 'olivedrab', 'orange', 'orangered', 'orchid', 'springgreen', 'steelblue'];
     var blinkSet = false;
 
     function loadXMLDoc() {
@@ -38,8 +40,7 @@
       document.getElementById("party4").style.visibility="";
       document.getElementById("parrots").style.visibility="visible";
       if (!blinkSet) {
-        setInterval(blinkRestaurant,350);
-        setInterval(blinkColor, 200);
+        setInterval(blinkColor, 300);
         blinkSet = true;
       }
     }
@@ -55,6 +56,9 @@ blinkRestaurant = function () {
 window.onload = loadXMLDoc;
   </script>
     <style>
+      body, .button, .button:disabled {
+        font-family: 'Rubik', sans-serif;
+      }
       #centered {
         margin: 0 auto;
         width: 800px; 
@@ -64,12 +68,11 @@ window.onload = loadXMLDoc;
         visibility: hidden;
       }
       h1 {
-        font-family: cursive;
+        font-family: 'Bungee Shade', cursive;
         font-size: 92px;
         color: #fff;
       }
       h2 {
-        font-family: sans-serif;
         font-size: 56px;
         color: #fff;
       }
@@ -87,18 +90,33 @@ window.onload = loadXMLDoc;
         text-decoration: none;
         display: inline-block;
         font-size: 48px;
+        cursor: pointer;
       }
       .button:disabled {
         background-color: #333;
         color: #999;
       }
+			.blink {
+					animation-duration: .75s;
+					animation-name: blink;
+					animation-iteration-count: infinite;
+					animation-direction: alternate;
+					animation-timing-function: ease-in-out;
+			}
+			@keyframes blink {
+				from {
+						opacity: 0;
+				}
+				to {
+						opacity: 1;                    
+				}
     </style>
 </head>
-<body bgcolor="black">
+<body  bgcolor="black">
   <div id="centered">
     <h2>Decide your fate:</h2>
     <button class="button" id="spinner" onclick="spinTheWheel()" disabled=true>MEAL OF FORTUNE</button><br />
-    <h1 id="mealtime"></h1>
+    <h1 id="mealtime" class="blink"></h1>
     <div id="parrots">
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />

@@ -31,17 +31,24 @@
         document.getElementById("spinner").disabled=false
     }
 
+    function toggleElementsVisibility(elems) {
+        for (i=0; i < elems.length; i++) {
+          toggleElementVisibility(elems[i]);
+        }
+    }
+
+    function toggleElementVisibility(elem) {
+      elem.style.visibility = elem.style.visibility == "" ? "hidden" : "";
+    }
+
     function spinTheWheel() {
       shuffle(dinner);
       document.getElementById("mealtime").innerHTML = dinner[0];
-      document.getElementById("party").style.visibility="";
-      document.getElementById("party2").style.visibility="";
-      document.getElementById("party3").style.visibility="";
-      document.getElementById("party4").style.visibility="";
-      document.getElementById("parrots").style.visibility="visible";
       if (!blinkSet) {
         setInterval(blinkColor, 300);
         blinkSet = true;
+        toggleElementsVisibility(document.getElementsByClassName("party"));
+        toggleElementVisibility(document.getElementById("parrots"));
       }
     }
 
@@ -63,9 +70,6 @@ window.onload = loadXMLDoc;
         margin: 0 auto;
         width: 800px; 
         text-align: center;
-      }
-      #parrots {
-        visibility: hidden;
       }
       h1 {
         font-family: 'Bungee Shade', cursive;
@@ -110,6 +114,63 @@ window.onload = loadXMLDoc;
 				to {
 						opacity: 1;                    
 				}
+			}
+
+/* Photo Banner */
+.container {
+    width: 800px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.photobanner{
+    height: 200px;
+    width: 6779px;
+    margin-bottom: 5px;
+    font-size: 0;
+}
+
+.photobanner img{
+  margin-bottom: 10px;
+  margin-right: 0px;
+  height: 200px;
+}
+
+ 
+/*keyframe animations*/
+.first {
+    -webkit-animation: bannermove 10s linear infinite;
+       -moz-animation: bannermove 10s linear infinite;
+        -ms-animation: bannermove 10s linear infinite;
+         -o-animation: bannermove 10s linear infinite;
+            animation: bannermove 10s linear infinite;
+}
+ 
+@keyframes "bannermove" {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -5075px;}
+}
+ 
+@-moz-keyframes bannermove {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -5075px;}
+}
+ 
+@-webkit-keyframes "bannermove" {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -5075px;}
+}
+ 
+@-ms-keyframes "bannermove" {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -5075px;}
+}
+ 
+@-o-keyframes "bannermove" {
+ 0% {margin-left: 0px;}
+ 100% {margin-left: -5075px;}
+}
+
     </style>
 </head>
 <body  bgcolor="black">
@@ -117,7 +178,7 @@ window.onload = loadXMLDoc;
     <h2>Decide your fate:</h2>
     <button class="button" id="spinner" onclick="spinTheWheel()" disabled=true>MEAL OF FORTUNE</button><br />
     <h1 id="mealtime" class="blink"></h1>
-    <div id="parrots">
+    <div id="parrots" style="visibility:hidden">
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
@@ -126,11 +187,33 @@ window.onload = loadXMLDoc;
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
       <img class="parrot" src="http://cultofthepartyparrot.com/parrots/hd/congaparrot.gif" />
     </div>
-    <img id="party" src="https://i.imgur.com/N6u0o2U.gif" style="visibility:hidden"/>
-    <img id="party2" src="https://thumbs.gfycat.com/BarrenBitterFox-small.gif" style="visibility:hidden"/>
-    <img id="party3" src="https://img.memecdn.com/party-hard_o_926441.gif" style="visibility:hidden"/>
-    <img id="party4" src="https://media2.giphy.com/media/MS3XuWjQV1FiU/source.gif" style="visibility:hidden"/>
-    
+		<div class="container">
+			<div class="photobanner">
+        <img class="first party" height="200" src="https://i.imgur.com/N6u0o2U.gif"/>
+        <img class="party"			 height="200" src="https://thumbs.gfycat.com/BarrenBitterFox-small.gif"/>
+        <img class="party"			 height="200" src="https://img.memecdn.com/party-hard_o_926441.gif"/>
+        <img class="party"			 height="200" src="https://media2.giphy.com/media/MS3XuWjQV1FiU/source.gif"/>
+        <img class="party"			 height="200" src="https://media.giphy.com/media/qqBQm1IPNGvzG/giphy.gif"/>
+        <img class="party"			 height="200" src="https://orig00.deviantart.net/b2d6/f/2012/259/8/3/party_hard__gif_by_teravita-d5ewooa.gif"/>
+        <img class="party"			 height="200" src="https://media.giphy.com/media/wIcbyzdjGlJgk/giphy.gif"/>
+        <img class="party"			 height="200" src="https://i.imgur.com/GRqXgRe.gif"/>
+        <img class="party"			 height="200" src="https://vignette.wikia.nocookie.net/gfaqsff/images/7/76/Dr._Hibbert_Party_Hard.gif/revision/latest?cb=20140325092345"/>
+        <img class="party"			 height="200" src="https://media.giphy.com/media/zQLjk9d31jlMQ/giphy.gif"/>
+        <img class="party"			 height="200" src="https://m.popkey.co/2d82b0/NDmzX.gif"/>
+        <img class="party"			 height="200" src="https://m.popkey.co/3892f6/q4MR0_f-maxage-0_s-200x150.gif"/>
+        <img class="party"			 height="200" src="https://media1.tenor.com/images/259eb21de66996e22f81d1b78c154a48/tenor.gif?itemid=5486376"/>
+        <img class="party"			 height="200" src="http://gifs.gifburger.com/744-cybergoth-dance-party.gif"/>
+        <img class="party"			 height="200" src="https://media.giphy.com/media/3o6Mbl0kpk4i9G2GCQ/giphy.gif"/>
+        <img class="party"			 height="200" src="https://media1.tenor.com/images/e9d484e691aac2d0f0a7427e3ec81922/tenor.gif?itemid=5541830"/>
+        <img class="party"			 height="200" src="https://i.imgur.com/893Smv1.gif"/>
+        <img class="party"       height="200" src="https://i.imgur.com/N6u0o2U.gif"/>
+        <img class="party"			 height="200" src="https://thumbs.gfycat.com/BarrenBitterFox-small.gif"/>
+        <img class="party"			 height="200" src="https://img.memecdn.com/party-hard_o_926441.gif"/>
+        <img class="party"			 height="200" src="https://media2.giphy.com/media/MS3XuWjQV1FiU/source.gif"/>
+        <img class="party"			 height="200" src="https://media.giphy.com/media/qqBQm1IPNGvzG/giphy.gif"/>
+        <img class="party"			 height="200" src="https://orig00.deviantart.net/b2d6/f/2012/259/8/3/party_hard__gif_by_teravita-d5ewooa.gif"/>
+      </div>
+    </div>
   </div>
 </body>
 </html>

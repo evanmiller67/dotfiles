@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>MEAL OF DESTINY</title>
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Rubik:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Outline|Baloo+Da" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     function shuffle(a) {
@@ -57,16 +57,12 @@ blinkColor = function () {
   document.body.style.transition = "background-color 0.4s ease";
   document.body.style.backgroundColor=color;
 }
-blinkRestaurant = function () {
-    var blink = document.getElementById("mealtime");
-    blink.style.visibility = blink.style.visibility == "" ? "hidden" : "";
-}
 
 window.onload = loadXMLDoc;
   </script>
     <style>
       body, .button, .button:disabled {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Baloo Da', sans-serif;
       }
       #centered {
         margin: 0 auto;
@@ -74,7 +70,7 @@ window.onload = loadXMLDoc;
         text-align: center;
       }
       h1 {
-        font-family: 'Bungee Shade', cursive;
+        font-family: 'Bungee Outline', cursive;
         font-size: 92px;
         color: #fff;
       }
@@ -103,7 +99,7 @@ window.onload = loadXMLDoc;
         color: #999;
       }
 			.blink {
-					animation-duration: .75s;
+					animation-duration: 1s;
 					animation-name: blink;
 					animation-iteration-count: infinite;
 					animation-direction: alternate;

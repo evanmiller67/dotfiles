@@ -50,7 +50,8 @@ export BASH_IT="/Users/exm5840/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='axin'      # Modified from 'atiomic'
+# export BASH_IT_THEME='axin'      # Modified from 'atiomic'
+export BASH_IT_THEME='emiller'      # Modified from 'atiomic'
 #export BASH_IT_THEME='sexy'
 #export BASH_IT_THEME='atomic'    # Yellow/Green
 #export BASH_IT_THEME='pure'      # Green/Blue

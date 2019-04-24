@@ -34,7 +34,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 "colorscheme zenburn
 "colorscheme jellybeans
-colorscheme  solarized
+silent! colorscheme  slate
+silent! colorscheme  solarized
 
 iabbrev rpry require 'pry'; binding.pry
 if filereadable(expand('~/.vimrc.local'))

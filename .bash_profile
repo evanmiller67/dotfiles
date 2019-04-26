@@ -4,8 +4,22 @@ source "$HOME/.bash_aliases"
 # Could be changed to use .bashrc 
 [ ! -f "$HOME/.bash_profile.local" ] || . "$HOME/.bash_profile.local"
 
+
+GREEN="\[\033[01;32m\]"
+BLUE="\[\033[01;34m\]"
+RED="\[\033[01;31m\]"
+NOC="\[\033[0m\]"
+
+#Set the prompt red if you sudo into root
+
+if [ $USER != 'root' ]; then
+  ps1c=$GREEN
+else
+  ps1c=$RED
+fi
 # Prompt with current path
-# [ -z "$PS1" ] || export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ "
+[ -z "$PS1" ] || export PS1="$ps1c\u @ \h $NOC: $BLUE\w $NOC$ "
+
 
 PATH=$PATH:$HOME/bin             # Add my bin to the PATH
 export PATH
@@ -46,8 +60,7 @@ export BASH_IT="/Users/exm5840/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-# export BASH_IT_THEME='axin'      # Modified from 'atiomic'
-export BASH_IT_THEME='emiller'      # Modified from 'atiomic'
+export BASH_IT_THEME='axin'      # Modified from 'atiomic'
 #export BASH_IT_THEME='sexy'
 #export BASH_IT_THEME='atomic'    # Yellow/Green
 #export BASH_IT_THEME='pure'      # Green/Blue

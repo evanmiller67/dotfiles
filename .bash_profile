@@ -13,10 +13,6 @@ export PATH
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Colors for iTerm. comment/uncomment for system
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-
 # Store 10,000 history entries
 export HISTSIZE=10000
 # Don't store duplicates

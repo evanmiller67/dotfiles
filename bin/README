@@ -2,3 +2,7 @@ Run order is important!
 
 hlink
 vimbundles
+
+-----
+To use minimal install:
+curl -qsSL https://bit.ly/tyricker | bash -s

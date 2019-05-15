@@ -27,6 +27,16 @@ export PATH
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 # Store 10,000 history entries
 export HISTSIZE=10000
 # Don't store duplicates
@@ -61,11 +71,6 @@ export BASH_IT="/Users/exm5840/.bash_it"
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
 export BASH_IT_THEME='emiller'      # Modified from 'atiomic'
-#export BASH_IT_THEME='axin'      # Modified from 'atiomic'
-#export BASH_IT_THEME='sexy'
-#export BASH_IT_THEME='atomic'    # Yellow/Green
-#export BASH_IT_THEME='pure'      # Green/Blue
-#export BASH_IT_THEME='rana'      # Green/Blue
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'

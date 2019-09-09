@@ -37,12 +37,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Store 10,000 history entries
-export HISTSIZE=10000
-# Don't store duplicates
-export HISTCONTROL=erasedups
-# Append to history file
+HISTTIMEFORMAT="%F %T: "
 shopt -s histappend
+HISTFILESIZE=999999
+HISTSIZE=999999
+HISTCONTROL=ignoreboth
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
 
 VISUAL=vim
 EDITOR="$VISUAL"

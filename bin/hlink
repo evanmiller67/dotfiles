@@ -52,12 +52,16 @@ if ARGV.include?('-h')
   exit 0
 end
 
-(Dir.entries(root) - %w(bin . .. .git .ssh)).each do |file|
+(Dir.entries(root) - %w(bin . .. .git .ssh .vim)).each do |file|
   next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(file)
 end
 
 (Dir.entries("#{root}/.ssh") - %w(. .. .ssh)).each do |file|
+  next if file =~ /(~|.*\.swp)$/
+  uninstall? ? uninstall(file) : install(".ssh/#{file}")
+end
+(Dir.entries("#{root}/.vim") - %w(. .. .vim)).each do |file|
   next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(".ssh/#{file}")
 end

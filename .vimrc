@@ -36,6 +36,7 @@ let g:airline#extensions#tabline#enabled = 1
 "colorscheme jellybeans
 silent! colorscheme  slate
 silent! colorscheme  solarized
+"silent! colorscheme  vimicks
 
 iabbrev rpry require 'pry'; binding.pry
 if filereadable(expand('~/.vimrc.local'))

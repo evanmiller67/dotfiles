@@ -38,6 +38,9 @@ silent! colorscheme  slate
 silent! colorscheme  solarized
 "silent! colorscheme  vimicks
 
+hi VertSplit ctermbg=240
+set fillchars+=vert:\ 
+
 iabbrev rpry require 'pry'; binding.pry
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local

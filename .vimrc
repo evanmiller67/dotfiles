@@ -35,8 +35,9 @@ let g:airline#extensions#tabline#enabled = 1
 "colorscheme zenburn
 "colorscheme jellybeans
 silent! colorscheme  slate
-silent! colorscheme  solarized
-"silent! colorscheme  vimicks
+"silent! colorscheme  solarized
+silent! colorscheme  vimicks
+"powerline, powerline-fonts (Hack)
 
 hi VertSplit ctermbg=240
 set fillchars+=vert:\ 

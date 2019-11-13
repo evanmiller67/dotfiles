@@ -67,7 +67,7 @@ if type -p "tmux" &> /dev/null; then
   printf " -----\n"
 fi
 # Path to the bash it configuration
-export BASH_IT="/Users/exm5840/.bash_it"
+export BASH_IT="/Users/evan.miller/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -75,7 +75,6 @@ export BASH_IT_THEME='emiller'      # Modified from 'atiomic'
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
-export GITHUB_TOKEN=4b6c9970434a4efb1af2f522f2f66058d3582ebd
 
 # Don't check mail when opening terminal.
 unset MAILCHECK

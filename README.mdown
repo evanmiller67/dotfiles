@@ -5,3 +5,13 @@ Quite a few assumptions, like assuming OS X, rvm, play, gcc-4.2, etc.
 
 ### License
 I don't care. This is all stuff you can find on your own anyway -- I just made it easy for you (if you use it). If you like it enough, buy me a beer.
+
+
+## Other things to install
+- homebrew
+- bash-it
+  - aliases, completion, plugins
+  - theme
+- vim
+  - powerline fonts
+  - pathogen

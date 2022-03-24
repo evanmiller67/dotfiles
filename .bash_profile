@@ -4,6 +4,8 @@ source "$HOME/.bash_aliases"
 # Could be changed to use .bashrc 
 [ ! -f "$HOME/.bash_profile.local" ] || . "$HOME/.bash_profile.local"
 
+# Shhh with the zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 GREEN="\[\033[01;32m\]"
 BLUE="\[\033[01;34m\]"

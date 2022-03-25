@@ -15,6 +15,7 @@ set shell=bash\ --rcfile\ ~/.bashrc
 set expandtab
 set tabstop=2       " Set tabs to 2 spaces
 set shiftwidth=2    " Set column shift amount
+set softtabstop=2   " Use tab as 2 spaces
 set background=dark " Set background to be dark
 "set nocp
 "filetype plugin on
@@ -46,3 +47,13 @@ iabbrev rpry require 'pry'; binding.pry
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+
+" Setup code folding automagically, handy, but starts folded
+"setlocal foldmethod=indent
+"setlocal foldlevel=2
+" Keep all folds open when a file is opened
+"augroup OpenAllFoldsOnFileOpen
+"    autocmd!
+"    autocmd BufRead * normal zR
+"augroup END

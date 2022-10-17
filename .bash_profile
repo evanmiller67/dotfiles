@@ -22,6 +22,10 @@ fi
 # Prompt with current path
 [ -z "$PS1" ] || export PS1="$ps1c\u @ \h $NOC: $BLUE\w $NOC$ "
 
+export CLICOLOR=1
+export GREP_COLOR='1;33'
+export LSCOLORS=Gxfxcxdxdxegedabagacad
+
 
 PATH=$PATH:$HOME/bin             # Add my bin to the PATH
 export PATH
@@ -29,24 +33,19 @@ export PATH
 # Add `homebrew` to $PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Setting PATH for Python 3.10
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+export PATH
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-HISTTIMEFORMAT="%F %T: "
+export HISTTIMEFORMAT="%F %T: "
 shopt -s histappend
-HISTFILESIZE=999999
-HISTSIZE=999999
-HISTCONTROL=ignoreboth
+export HISTFILESIZE=999999
+export HISTSIZ=E999999
+export HISTCONTROL=ignoreboth
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 
 

@@ -62,6 +62,9 @@ export CC=/usr/local/bin/gcc-4.2
 if type -p "brew" &> /dev/null && [ -f `brew --prefix`/etc/bash_completion.d ]; then
     . `brew --prefix`/etc/bash_completion.d
 fi
+export NVM_DIR=~/.nvm
+# source /usr/local/opt/nvm/nvm.sh
+complete -C '/usr/local/bin/aws_completer' aws
 
 if type -p "tmux" &> /dev/null; then
   printf "\n -----\ntmux sessions \n -----\n"
@@ -89,3 +92,9 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+eval "$(direnv hook bash)"
+
+# Setting PATH for Python 3.10
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+export PATH

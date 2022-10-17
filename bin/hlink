@@ -17,6 +17,12 @@ def destination(file,sub_directory)
   File.join(*[home, sub_directory, File.basename(file)].compact)
 end
 
+def make_destination(dirname)
+  unless File.directory?(dirname)
+    FileUtils.mkdir_p(dirname)
+  end
+end
+
 def install(file,sub_directory=nil)
   if system("ln -nsf #{root}/#{file} #{home}/#{file}")
     print "successfully installed "
@@ -57,12 +63,15 @@ end
   uninstall? ? uninstall(file) : install(file)
 end
 
+dirs = [".ssh", ".vim"]
+dirs.each {|dir| make_destination(dir)}
+
 (Dir.entries("#{root}/.ssh") - %w(. .. .ssh)).each do |file|
   next if file =~ /(~|.*\.swp)$/
   uninstall? ? uninstall(file) : install(".ssh/#{file}")
 end
 (Dir.entries("#{root}/.vim") - %w(. .. .vim)).each do |file|
   next if file =~ /(~|.*\.swp)$/
-  uninstall? ? uninstall(file) : install(".ssh/#{file}")
+  uninstall? ? uninstall(file) : install(".vim/#{file}")
 end
 # @todo Have this recursively traverse directories, linking to files in those directories

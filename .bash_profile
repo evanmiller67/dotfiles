@@ -26,6 +26,9 @@ fi
 PATH=$PATH:$HOME/bin             # Add my bin to the PATH
 export PATH
 
+# Add `homebrew` to $PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
